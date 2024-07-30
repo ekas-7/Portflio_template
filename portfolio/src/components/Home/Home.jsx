@@ -14,7 +14,7 @@ export default function Home() {
         <div className="text-7xl font-bold text-center mt-6 mb-8" style={{ color: isSun ? 'black' : 'white' }}>
           YUVVIR .S. CHAHAL
         </div>
-        <button className={`text-2xl p-6 bg-transparent hover:bg-[#FFD700] ${isSun ? 'text-black' : 'text-white'} font-semibold py-2 px-4 border hover:border-transparent rounded `}>
+        <button className={`text-2xl p-6 bg-transparent hover:bg-[#FFD700] ${isSun ? 'text-black' : 'text-white'} font-semibold py-2 px-4  border border-gray-600 bottom-3 hover:border-transparent rounded `}>
           Get Resume
         </button>
       </div>
