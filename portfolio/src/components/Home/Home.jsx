@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className={`min-h-screen flex flex-1 justify-evenly items-center px-8 ${isSun ? 'bg-white' : 'bg-gray-800'} transition-colors duration-300 overflow-hidden`}>
       <div className="text-4xl font-bold text-left" style={{ color: isSun ? 'black' : 'white' }}>
-        Yuvvir Chahl
+        Yuvvir Chahal
       </div>
       <div>
         <img
