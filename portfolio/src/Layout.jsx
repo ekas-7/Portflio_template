@@ -5,7 +5,7 @@ import Header from './components/Header/Header.jsx';
 
 const Layout = () => {
   return (
-    <div>
+    <div >
       <Header />
       <Outlet />
     </div>

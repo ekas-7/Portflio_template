@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <header className="shadow sticky z-50 top-0">
-      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+      <nav className={`${isSun ? 'bg-white text-black' : 'bg-gray-800 text-white'} transition-colors duration-300 border-gray-200 px-4 lg:px-6 py-2.5 z-10`}>
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link
             to="/"
@@ -21,13 +21,13 @@ export default function Header() {
               style={{
                 display: "inline-block",
                 padding: "8px",
-                border: `2px solid ${isHovered ? "transparent" : "black"}`,
+                border: `2px solid ${isHovered ? "transparent" : (isSun ? "black" : "white")}`,
                 borderRadius: "5px",
                 fontSize: "1.5rem",
                 fontWeight: "bold",
                 letterSpacing: "0.05em",
                 backgroundColor: isHovered ? "#FFD700" : "transparent",
-                color: "black",
+                color: isSun ? "black" : "white",
                 transition: "background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease",
               }}
             >
@@ -41,7 +41,7 @@ export default function Header() {
               className={`border-2 font-medium rounded-full text-sm p-3 lg:p-4 mr-4 flex items-center justify-center transition-colors duration-300 ${
                 isSun
                   ? "bg-yellow-400 border-yellow-600 text-yellow-900 hover:bg-yellow-500"
-                  : "bg-gray-800 border-gray-600 text-gray-100 hover:bg-gray-700"
+                  : "bg-gray-700 border-gray-600 text-gray-100 hover:bg-gray-600"
               }`}
               style={{ width: "40px", height: "40px" }}
             >
@@ -54,7 +54,7 @@ export default function Header() {
 
             <Link
               to="#"
-              className="bg-transparent hover:bg-[#FFD700] text-black font-semibold py-2 px-4 border hover:border-transparent rounded"
+              className={`bg-transparent hover:bg-[#FFD700] ${isSun ? 'text-black' : 'text-white'} font-semibold py-2 px-4 border hover:border-transparent rounded`}
             >
               Get Resume
             </Link>
@@ -65,78 +65,20 @@ export default function Header() {
             id="mobile-menu-2"
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-black" : "text-[#FFD700]"
-                    } border-b border-gray-100 hover:text-[#FFD700] lg:border-0 lg:p-0`
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-black" : "text-[#FFD700]"
-                    } border-b border-gray-100 hover:text-[#FFD700] lg:border-0 lg:p-0`
-                  }
-                >
-                  About me
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-black" : "text-[#FFD700]"
-                    } border-b border-gray-100 hover:text-[#FFD700] lg:border-0 lg:p-0`
-                  }
-                >
-                  Projects
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-black" : "text-[#FFD700]"
-                    } border-b border-gray-100 hover:text-[#FFD700] lg:border-0 lg:p-0`
-                  }
-                >
-                  Skills and Experience
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-black" : "text-[#FFD700]"
-                    } border-b border-gray-100 hover:text-[#FFD700] lg:border-0 lg:p-0`
-                  }
-                >
-                  Education
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-black" : "text-[#FFD700]"
-                    } border-b border-gray-100 hover:text-[#FFD700] lg:border-0 lg:p-0`
-                  }
-                >
-                  Contact
-                </NavLink>
-              </li>
+              {['Home', 'About me', 'Projects', 'Skills and Experience', 'Education', 'Contact'].map((item) => (
+                <li key={item}>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `block py-2 pr-4 pl-3 duration-200 ${
+                        isActive ? (isSun ? 'text-black' : 'text-white') : 'text-[#FFD700]'
+                      } border-b border-gray-100 hover:text-[#FFD700] lg:border-0 lg:p-0`
+                    }
+                  >
+                    {item}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
