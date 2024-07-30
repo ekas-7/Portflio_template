@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
-import Typewriter from "./Typewriter"; // Adjust the path as needed
 
 export default function Header() {
   const [isHovered, setIsHovered] = useState(false);
@@ -58,13 +57,13 @@ export default function Header() {
 
               <Link
                 to="#"
-                className={`bg-transparent hover:bg-[#FFD700] text-${isSun || isHovered ? "black" : "white"} font-semibold py-2 px-4 border border-gray-600 rounded transition-all duration-300 ${isHovered ? "border-transparent" : ""}`}
+                className={`bg-transparent hover:bg-[#FFD700] text-${isSun || isHovered ? "black" : "white"} font-semibold py-2 px-4 border border-gray-600 rounded transition-all duration-300 ${
+                  isHovered ? "border-transparent" : ""
+                }`}
               >
                 Get Resume
               </Link>
             </div>
-
-            <Typewriter />
 
             <div
               className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"

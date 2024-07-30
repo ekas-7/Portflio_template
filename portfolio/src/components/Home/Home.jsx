@@ -1,6 +1,14 @@
 import React from "react";
-import profilePic from "../../assets/profile-pic.jpg"; // Adjust the path to your profile picture
+import profilePic from "../../assets/profile-pic.jpeg"; // Adjust the path to your profile picture
 import { useTheme } from "../../ThemeContext";
+import Typewriter from "../Typewriter"; // Ensure this path is correct
+
+const greetings = [
+  "Hello I'm",       // English
+  "Bonjour je suis ", // French
+  "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਮੈਂ ਹਾਂ", // Punjabi
+  "Hola soy",        // Spanish
+];
 
 export default function Home() {
   const { isSun } = useTheme();
@@ -13,16 +21,16 @@ export default function Home() {
     >
       <div className="flex flex-col items-center justify-center">
         <div
-          className="text-4xl font-bold text-center"
+          className="text-4xl font-bold text-center italic mb-2"
           style={{ color: isSun ? "black" : "white" }}
         >
-          Hello I'm
+          <Typewriter texts={greetings} delay={5000} className="italic" />
         </div>
         <div
-          className="text-7xl font-bold text-center mt-6 mb-8"
+          className="text-7xl font-bold text-center mt-4 mb-8 italic"
           style={{ color: isSun ? "black" : "white" }}
         >
-          YUVVIR .S. CHAHAL
+          YUVVIR .S. CHAHAL 
         </div>
         <button
           className={`text-2xl py-2 px-4 bg-transparent hover:bg-[#FFD700] ${
