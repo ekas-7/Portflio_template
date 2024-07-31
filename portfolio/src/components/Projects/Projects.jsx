@@ -46,16 +46,16 @@ export default function Projects() {
     <div
       className={`min-h-screen flex flex-col items-center px-8 ${
         isSun ? "bg-white" : "bg-gray-800"
-      } transition-colors duration-300 overflow-hidden`}
+      } transition-colors duration-300`}
     >
       <h1
-        className={`text-6xl font-bold text-center mb-16 mt-16 ${
+        className={`text-6xl font-bold text-center mb-14 mt-16 ${
           isSun ? "text-black" : "text-white"
         }`}
       >
         Projects
       </h1>
-      <div className="grid grid-cols-3 gap-4 mb-20">
+      <div className="grid grid-cols-3 gap-4 mb-12"> {/* Reduced margin-bottom */}
         {gridProjects.map((project, index) => (
           <a
             key={index}
@@ -92,13 +92,13 @@ export default function Projects() {
         ))}
       </div>
      
-        <button
-          className={`text-2xl py-2 px-4 bg-transparent hover:bg-[#FFD700] ${
-            isSun ? "text-black" : "text-white"
-          } font-semibold border border-gray-600 rounded transition-all duration-300 ease-in-out`}
-        >
-          Load More !
-        </button>
+      <button
+        className={`text-2xl py-2 px-4 bg-transparent hover:bg-[#FFD700] active:translate-y-1 ${
+          isSun ? "text-black" : "text-white"
+        } font-semibold border border-gray-600 rounded transition-all duration-300 ease-in-out`}
+      >
+        Load More !
+      </button>
     </div>
   );
 }

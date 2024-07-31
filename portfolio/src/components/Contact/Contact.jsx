@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTheme } from '../../ThemeContext';
-import Social from './Social'; // Import the Social component
 
 export default function Contact() {
   const { isSun } = useTheme();

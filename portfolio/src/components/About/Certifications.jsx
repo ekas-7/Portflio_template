@@ -33,7 +33,7 @@ export default function Certifications() {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-8 transition-colors duration-300"
+      className="min-h-screen flex flex-col items-center justify-center px-8 transition-colors duration-300 "
       style={{ backgroundColor: isSun ? '#FFD700' : '#FFFACD' }}
     >
       <h1 className={`text-6xl font-bold  ${isSun ? 'text-black' : 'text-black'} mb-24 `}>

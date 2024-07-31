@@ -1,7 +1,7 @@
 import React from "react";
-import profilePic from "../../assets/profile-pic.jpeg"; // Adjust the path to your profile picture
+import profilePic from "../../assets/profile-pic.jpeg";
 import { useTheme } from "../../ThemeContext";
-import Typewriter from "../Typewriter"; // Ensure this path is correct
+import Typewriter from "../Typewriter";
 
 const greetings = [
   "Hello I'm",       // English
@@ -10,8 +10,14 @@ const greetings = [
   "Hola soy",        // Spanish
 ];
 
-export default function Home() {
+export default function Home({ certificationsRef }) { // Accept prop
   const { isSun } = useTheme();
+
+  const handleButtonClick = () => {
+    if (certificationsRef.current) {
+      certificationsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div
@@ -33,11 +39,12 @@ export default function Home() {
           YUVVIR .S. CHAHAL 
         </div>
         <button
+          onClick={handleButtonClick} // Add onClick handler
           className={`text-2xl py-2 px-4 bg-transparent hover:bg-[#FFD700] ${
             isSun ? "text-black" : "text-white"
           } font-semibold border border-gray-600 rounded transition-all duration-300 ease-in-out`}
         >
-          Know me better !
+          Know me better!
         </button>
       </div>
 
@@ -56,3 +63,4 @@ export default function Home() {
     </div>
   );
 }
+``
