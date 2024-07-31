@@ -38,9 +38,9 @@ export default function Projects() {
   const emptyCellsNeeded = (gridSize * gridSize) - (totalProjects % (gridSize * gridSize));
 
   // Add empty cells to fill the grid
-  for (let i = 0; i < emptyCellsNeeded; i++) {
-    gridProjects.push({});
-  }
+  // for (let i = 0; i < emptyCellsNeeded; i++) {
+  //   gridProjects.push({});
+  // }
 
   return (
     <div
@@ -55,7 +55,7 @@ export default function Projects() {
       >
         Projects
       </h1>
-      <div className="grid grid-cols-3 gap-4 mb-16">
+      <div className="grid grid-cols-3 gap-4 mb-20">
         {gridProjects.map((project, index) => (
           <a
             key={index}

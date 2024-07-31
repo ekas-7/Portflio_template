@@ -37,7 +37,7 @@ export default function Home() {
             isSun ? "text-black" : "text-white"
           } font-semibold border border-gray-600 rounded transition-all duration-300 ease-in-out`}
         >
-          Get Resume
+          Know me better !
         </button>
       </div>
 
