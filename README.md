@@ -34,9 +34,19 @@ This is a modern, responsive personal portfolio website built using React and st
 
 ## Setup and Installation
 
-1. Clone the repository
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/ekas-7/Portflio_template.git
+   ```
 2. Install dependencies:
-3.  Start the development server:
+   ```bash
+   npm install
+   ```
+4.  Start the server:
+   ```bash
+   npm run dev
+   ```
 ## Customization
 
 - Update personal information in respective components
