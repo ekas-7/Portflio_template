@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 import Layout from './Layout.jsx';
-import Home from './components/Home/Home.jsx';
-import About from './components/About/Certifications.jsx';
 import { ThemeProvider } from './ThemeContext';
 
 const router = createBrowserRouter(
