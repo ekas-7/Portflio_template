@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 import Layout from './Layout.jsx';
-import { ThemeProvider } from './ThemeContext';
+import { ThemeProvider } from './ThemeContext.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
